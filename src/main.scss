@@ -1,5 +1,6 @@
 @import 'reset.scss';
 @import 'variables.scss';
+@import 'layout.scss';
 
 @font-face {
   font-family: Outfit;
@@ -22,9 +23,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  height: 1rem;
   min-height: 100vh;
-
 }
 
 main {
@@ -32,15 +31,24 @@ main {
   background-color: #15263f;
   border-radius: .9375rem;
   box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.0952917);
-  margin: 3.875rem auto;
+  margin: auto auto;
   max-width: 20.4375rem;
   max-height: 33.9375rem;
+
+  @include respond('desktop') {
+    margin: 9.5rem auto;
+    max-width: 21.875rem;
+    max-height: 37.25rem;
+  }
 
   .equilibrium-picture {
     margin: 1.5rem;
     border-radius: .5rem;
     width: 17.375rem;
-    background-blend-mode: normal;
+
+    @include respond('desktop') {
+      width: 18.875rem;
+    }
   }
 
   h1 {
@@ -56,6 +64,10 @@ main {
     line-height: calc(26 / 18);
     color: #8bacd9;
     margin: .75rem 1.5rem 0;
+
+    @include respond('desktop') {
+      margin: 1rem 1.5rem 0;
+    }
   }
 
   .info {
@@ -64,6 +76,10 @@ main {
     justify-content: space-between;
     align-items: center;
     margin: 1rem 1.5625rem 0 1.5rem;
+
+    @include respond('desktop') {
+      margin: 1.5rem 1.5625rem 0 1.5rem;
+    }
 
     .icon {
       margin-right: .405rem;
@@ -76,6 +92,10 @@ main {
         font-weight: 600;
         font-size: .9375rem;
         color: #00fff8;
+
+        @include respond('desktop') {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -83,21 +103,29 @@ main {
       display: flex;
 
       .clock {
-        margin-right: .564375rem;
+        margin-right: .48125rem;
       }
 
       .promoEndDate {
         font-weight: 400;
         font-size: .9375rem;
         color: #8bacd9;
+
+        @include respond('desktop') {
+          font-size: 1rem;
+        }
       }
     }
   }
 
   .divider {
     border-top: 1px solid #2e405a;
-    width: 17.375rem;
+    width: 18.875rem;
     margin: 1rem auto 0;
+
+    @include respond('desktop') {
+      margin: 1.5rem auto 0;
+    }
   }
 
   .creator {
@@ -105,6 +133,10 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @include respond('desktop') {
+      margin: 1rem 1.5rem 2rem;
+    }
 
     .creator-pic {
       width: 2.0625rem;
@@ -118,6 +150,10 @@ main {
       font-size: .9375rem;
       color: #8bacd9;
       margin: auto 0;
+
+      @include respond('desktop') {
+        font-size: 1rem;
+      }
 
       .highlight {
         color: #ffffff;
