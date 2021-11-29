@@ -218,6 +218,10 @@ p {
   text-align: center;
   color: #8BACD9;
   position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  z-index: -1;
 }
 
 .attribution a {
