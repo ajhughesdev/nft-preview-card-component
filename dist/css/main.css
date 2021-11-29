@@ -148,13 +148,16 @@ p {
   margin: 1rem 1.5625rem 0 1.5rem;
 }
 
-.info .icon {
-    margin-right: .405rem;
-  }
-
 .info .eth {
     display: flex;
+    align-items: center;
   }
+
+.info .eth .icon {
+      margin-right: .405rem;
+      width: 11px;
+      height: 18px;
+    }
 
 .info .eth .currentRate {
       font-weight: 600;
@@ -164,10 +167,13 @@ p {
 
 .info .end {
     display: flex;
+    align-items: center;
   }
 
 .info .end .clock {
       margin-right: .48125rem;
+      width: 17px;
+      height: 17px;
     }
 
 .info .end .promoEndDate {
@@ -217,10 +223,10 @@ p {
   font-weight: 100;
   text-align: center;
   color: #8BACD9;
+  position: absolute;
 }
 
 .attribution a {
-  position: absolute;
   color: hsl(228, 45%, 44%);
   font-weight: 300;
   cursor: pointer;

@@ -121,12 +121,15 @@ p {
     margin: 1.5rem 1.5625rem 0 1.5rem;
   }
 
-  .icon {
-    margin-right: .405rem;
-  }
-
   .eth {
     display: flex;
+    align-items: center;
+
+    .icon {
+      margin-right: .405rem;
+      width: 11px;
+      height: 18px;
+    }
 
     .currentRate {
       font-weight: 600;
@@ -141,9 +144,12 @@ p {
 
   .end {
     display: flex;
+    align-items: center;
 
     .clock {
       margin-right: .48125rem;
+      width: 17px;
+      height: 17px;
     }
 
     .promoEndDate {
