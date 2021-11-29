@@ -19,28 +19,24 @@ html {
 
 body {
   background-color: #0d192c;
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  // flex: 1 0 auto;
 }
 
 main {
   background-color: #15263f;
   border-radius: .9375rem;
   box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.0952917);
-  margin: auto auto;
+  margin: 3.875rem auto;
   max-width: 20.4375rem;
   max-height: 33.9375rem;
 
 
   @include respond('desktop') {
-    margin: auto auto;
+    margin: 9.5rem auto;
     max-width: 21.875rem;
     max-height: 37.25rem;
   }
@@ -215,11 +211,10 @@ p {
   font-weight: 100;
   text-align: center;
   color: #8BACD9;
-  // grid-row-start: 2;
-  // grid-row-end: 3;
 }
 
 .attribution a {
+  position: absolute;
   color: hsl(228, 45%, 44%);
   font-weight: 300;
   cursor: pointer;
