@@ -1,0 +1,27 @@
+{
+  "name": "nft-preview-card-component",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "css:watch": "postcss src/main.scss --output dist/css/main.css --env development --verbose --watch",
+    "css:build": "postcss src/main.scss --output dist/css/main.css --env production --verbose"
+  },
+  "browserslist": [
+    "> 2%, last 2 versions, firefox esr, not dead"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.12",
+    "postcss": "^8.4.4",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-cli": "^9.0.2",
+    "postcss-map-get": "^0.3.0",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.0.1",
+    "postcss-scss": "^4.0.2",
+    "postcss-sort-media-queries": "^4.2.1"
+  }
+}

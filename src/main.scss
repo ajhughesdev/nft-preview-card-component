@@ -1,0 +1,141 @@
+@import 'reset.scss';
+@import 'variables.scss';
+
+@font-face {
+  font-family: Outfit;
+  src: url('../fonts/Outfit-VF.woff2') format('woff2-variations');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+:root {
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.26;
+}
+
+body {
+  background-color: #0d192c;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 1rem;
+  min-height: 100vh;
+
+}
+
+main {
+  flex-grow: 1;
+  background-color: #15263f;
+  border-radius: .9375rem;
+  box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.0952917);
+  margin: 3.875rem auto;
+  max-width: 20.4375rem;
+  max-height: 33.9375rem;
+
+  .equilibrium-picture {
+    margin: 1.5rem;
+    border-radius: .5rem;
+    width: 17.375rem;
+    background-blend-mode: normal;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 1.375rem;
+    color: #ffffff;
+    margin: 0 1.5rem;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: calc(26 / 18);
+    color: #8bacd9;
+    margin: .75rem 1.5rem 0;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 1.5625rem 0 1.5rem;
+
+    .icon {
+      margin-right: .405rem;
+    }
+
+    .eth {
+      display: flex;
+
+      .currentRate {
+        font-weight: 600;
+        font-size: .9375rem;
+        color: #00fff8;
+      }
+    }
+
+    .end {
+      display: flex;
+
+      .clock {
+        margin-right: .564375rem;
+      }
+
+      .promoEndDate {
+        font-weight: 400;
+        font-size: .9375rem;
+        color: #8bacd9;
+      }
+    }
+  }
+
+  .divider {
+    border-top: 1px solid #2e405a;
+    width: 17.375rem;
+    margin: 1rem auto 0;
+  }
+
+  .creator {
+    margin: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .creator-pic {
+      width: 2.0625rem;
+      margin-right: 1rem;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: .9375rem;
+      color: #8bacd9;
+      margin: auto 0;
+
+      .highlight {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+
+.attribution {
+  font-size: 11px;
+  font-weight: 100;
+  text-align: center;
+  color: #8BACD9;
+}
+
+a {
+  color: hsl(228, 45%, 44%);
+  font-weight: 300;
+  cursor: pointer;
+}

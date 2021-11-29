@@ -1,0 +1,187 @@
+/*** The new CSS Reset - version 1.4.1 (last updated 23.11.2021) ***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  /* -webkit-line-break: after-white-space;*/
+}
+
+@font-face {
+  font-family: Outfit;
+  src: url('../fonts/Outfit-VF.woff2') format('woff2-variations');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+:root {
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.26;
+}
+
+body {
+  background-color: #0d192c;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 1rem;
+  min-height: 100vh;
+
+}
+
+main {
+  flex-grow: 1;
+  background-color: #15263f;
+  border-radius: .9375rem;
+  box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.0952917);
+  margin: 3.875rem auto;
+  max-width: 20.4375rem;
+  max-height: 33.9375rem;
+}
+
+main .equilibrium-picture {
+    margin: 1.5rem;
+    border-radius: .5rem;
+    width: 17.375rem;
+    background-blend-mode: normal;
+  }
+
+main h1 {
+    font-weight: 600;
+    font-size: 1.375rem;
+    color: #ffffff;
+    margin: 0 1.5rem;
+  }
+
+main p {
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: calc(26 / 18);
+    color: #8bacd9;
+    margin: .75rem 1.5rem 0;
+  }
+
+main .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 1.5625rem 0 1.5rem;
+  }
+
+main .info .icon {
+      margin-right: .405rem;
+    }
+
+main .info .eth {
+      display: flex;
+    }
+
+main .info .eth .currentRate {
+        font-weight: 600;
+        font-size: .9375rem;
+        color: #00fff8;
+      }
+
+main .info .end {
+      display: flex;
+    }
+
+main .info .end .clock {
+        margin-right: .564375rem;
+      }
+
+main .info .end .promoEndDate {
+        font-weight: 400;
+        font-size: .9375rem;
+        color: #8bacd9;
+      }
+
+main .divider {
+    border-top: 1px solid #2e405a;
+    width: 17.375rem;
+    margin: 1rem auto 0;
+  }
+
+main .creator {
+    margin: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+main .creator .creator-pic {
+      width: 2.0625rem;
+      margin-right: 1rem;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+    }
+
+main .creator p {
+      font-weight: 400;
+      font-size: .9375rem;
+      color: #8bacd9;
+      margin: auto 0;
+    }
+
+main .creator p .highlight {
+        color: #ffffff;
+      }
+
+
+.attribution {
+  font-size: 11px;
+  font-weight: 100;
+  text-align: center;
+  color: #8BACD9;
+}
+
+a {
+  color: hsl(228, 45%, 44%);
+  font-weight: 300;
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */
