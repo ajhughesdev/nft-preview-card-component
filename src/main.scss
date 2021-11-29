@@ -9,25 +9,28 @@
   font-weight: 100 900;
 }
 
-:root {
+html {
   font-family: Outfit;
   font-size: 16px;
   font-style: normal;
   line-height: 1.26;
+  height: 100%;
 }
 
 body {
   background-color: #0d192c;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  // flex: 1 0 auto;
 }
 
 main {
-  flex-grow: 1;
   background-color: #15263f;
   border-radius: .9375rem;
   box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.0952917);
@@ -35,143 +38,193 @@ main {
   max-width: 20.4375rem;
   max-height: 33.9375rem;
 
+
   @include respond('desktop') {
-    margin: 9.5rem auto;
+    margin: auto auto;
     max-width: 21.875rem;
     max-height: 37.25rem;
   }
+}
 
-  .equilibrium-picture {
-    margin: 1.5rem;
-    border-radius: .5rem;
-    width: 17.375rem;
+.container {
+  position: relative;
+  width: 17.375rem;
+  margin: 1.5rem;
 
-    @include respond('desktop') {
-      width: 18.875rem;
-    }
-  }
-
-  h1 {
-    font-weight: 600;
-    font-size: 1.375rem;
-    color: #ffffff;
-    margin: 0 1.5rem;
-  }
-
-  p {
-    font-weight: 300;
-    font-size: 1.125rem;
-    line-height: calc(26 / 18);
-    color: #8bacd9;
-    margin: .75rem 1.5rem 0;
-
-    @include respond('desktop') {
-      margin: 1rem 1.5rem 0;
-    }
-  }
-
-  .info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem 1.5625rem 0 1.5rem;
-
-    @include respond('desktop') {
-      margin: 1.5rem 1.5625rem 0 1.5rem;
-    }
-
-    .icon {
-      margin-right: .405rem;
-    }
-
-    .eth {
-      display: flex;
-
-      .currentRate {
-        font-weight: 600;
-        font-size: .9375rem;
-        color: #00fff8;
-
-        @include respond('desktop') {
-          font-size: 1rem;
-        }
-      }
-    }
-
-    .end {
-      display: flex;
-
-      .clock {
-        margin-right: .48125rem;
-      }
-
-      .promoEndDate {
-        font-weight: 400;
-        font-size: .9375rem;
-        color: #8bacd9;
-
-        @include respond('desktop') {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-
-  .divider {
-    border-top: 1px solid #2e405a;
+  @include respond('desktop') {
     width: 18.875rem;
-    margin: 1rem auto 0;
+  }
+}
 
-    @include respond('desktop') {
-      margin: 1.5rem auto 0;
-    }
+.equilibrium-picture {
+  border-radius: .5rem;
+  width: 100%;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: 500ms ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: 500ms ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container:hover .equilibrium-picture {
+  opacity: 50.3%;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.container:hover {
+  border-radius: .5rem;
+  background-color: #00fff8;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.375rem;
+  color: #ffffff;
+  margin: 0 1.5rem;
+}
+
+h1:hover {
+  color: #00fff8;
+  cursor: pointer;
+}
+
+
+p {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: calc(26 / 18);
+  color: #8bacd9;
+  margin: .75rem 1.5rem 0;
+
+  @include respond('desktop') {
+    margin: 1rem 1.5rem 0;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 1.5625rem 0 1.5rem;
+
+  @include respond('desktop') {
+    margin: 1.5rem 1.5625rem 0 1.5rem;
   }
 
-  .creator {
-    margin: 1rem 1.5rem 1.5rem;
+  .icon {
+    margin-right: .405rem;
+  }
+
+  .eth {
     display: flex;
-    flex-direction: row;
-    align-items: center;
 
-    @include respond('desktop') {
-      margin: 1rem 1.5rem 2rem;
-    }
-
-    .creator-pic {
-      width: 2.0625rem;
-      margin-right: 1rem;
-      border: 1px solid #ffffff;
-      border-radius: 50%;
-    }
-
-    p {
-      font-weight: 400;
+    .currentRate {
+      font-weight: 600;
       font-size: .9375rem;
-      color: #8bacd9;
-      margin: auto 0;
+      color: #00fff8;
 
       @include respond('desktop') {
         font-size: 1rem;
       }
+    }
+  }
 
-      .highlight {
-        color: #ffffff;
+  .end {
+    display: flex;
+
+    .clock {
+      margin-right: .48125rem;
+    }
+
+    .promoEndDate {
+      font-weight: 400;
+      font-size: .9375rem;
+      color: #8bacd9;
+
+      @include respond('desktop') {
+        font-size: 1rem;
       }
     }
   }
 }
 
+.divider {
+  border-top: 1px solid #2e405a;
+  width: 18.875rem;
+  margin: 1rem auto 0;
+
+  @include respond('desktop') {
+    margin: 1.5rem auto 0;
+  }
+}
+
+.creator {
+  margin: 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include respond('desktop') {
+    margin: 1rem 1.5rem 2rem;
+  }
+
+  .creator-pic {
+    width: 2.0625rem;
+    margin-right: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: .9375rem;
+    color: #8bacd9;
+    margin: auto 0;
+
+    @include respond('desktop') {
+      font-size: 1rem;
+    }
+
+    .highlight {
+      color: #ffffff;
+    }
+
+    .highlight:hover {
+      color: #00fff8;
+      cursor: pointer;
+    }
+  }
+}
 
 .attribution {
   font-size: 11px;
   font-weight: 100;
   text-align: center;
   color: #8BACD9;
+  // grid-row-start: 2;
+  // grid-row-end: 3;
 }
 
-a {
+.attribution a {
   color: hsl(228, 45%, 44%);
   font-weight: 300;
   cursor: pointer;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
 }

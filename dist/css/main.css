@@ -1,1 +1,279 @@
-:where(:not(iframe,canvas,img,svg,video):not(svg *,symbol *)){all:unset;display:revert}*,:after,:before{box-sizing:border-box}ol,ul{list-style:none}img{max-width:100%}table{border-collapse:collapse}textarea{white-space:revert}:where([contenteditable]){-moz-user-modify:read-write;-webkit-user-modify:read-write;overflow-wrap:break-word}@font-face{font-family:Outfit;font-style:normal;font-weight:100 900;src:url(../fonts/Outfit-VF.woff2) format("woff2-variations")}:root{font-family:Outfit;font-size:16px;font-style:normal;line-height:1.26}body{background-color:#0d192c}.content{display:flex;flex-direction:column;min-height:100vh}main{background-color:#15263f;border-radius:.9375rem;box-shadow:0 1.5625rem 3.125rem rgba(0,0,0,.095);flex-grow:1;margin:auto;max-height:33.9375rem;max-width:20.4375rem}main .equilibrium-picture{border-radius:.5rem;margin:1.5rem;width:17.375rem}main h1{color:#fff;font-size:1.375rem;font-weight:600;margin:0 1.5rem}main p{color:#8bacd9;font-size:1.125rem;font-weight:300;line-height:1.44444;margin:.75rem 1.5rem 0}main .info{align-items:center;display:flex;flex-direction:row;justify-content:space-between;margin:1rem 1.5625rem 0 1.5rem}main .info .icon{margin-right:.405rem}main .info .eth{display:flex}main .info .eth .currentRate{color:#00fff8;font-size:.9375rem;font-weight:600}main .info .end{display:flex}main .info .end .clock{margin-right:.48125rem}main .info .end .promoEndDate{color:#8bacd9;font-size:.9375rem;font-weight:400}main .divider{border-top:1px solid #2e405a;margin:1rem auto 0;width:18.875rem}main .creator{align-items:center;display:flex;flex-direction:row;margin:1rem 1.5rem 1.5rem}main .creator .creator-pic{border:1px solid #fff;border-radius:50%;margin-right:1rem;width:2.0625rem}main .creator p{color:#8bacd9;font-size:.9375rem;font-weight:400;margin:auto 0}main .creator p .highlight{color:#fff}.attribution{color:#8bacd9;font-size:11px;font-weight:100;text-align:center}a{color:#3e52a3;cursor:pointer;font-weight:300}@media (min-width:90rem){main{margin:9.5rem auto;max-height:37.25rem;max-width:21.875rem}main .equilibrium-picture{width:18.875rem}main p{margin:1rem 1.5rem 0}main .info{margin:1.5rem 1.5625rem 0 1.5rem}main .info .end .promoEndDate,main .info .eth .currentRate{font-size:1rem}main .divider{margin:1.5rem auto 0}main .creator{margin:1rem 1.5rem 2rem}main .creator p{font-size:1rem}}
+/*** The new CSS Reset - version 1.4.1 (last updated 23.11.2021) ***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  /* -webkit-line-break: after-white-space;*/
+}
+
+@font-face {
+  font-family: Outfit;
+  src: url('../fonts/Outfit-VF.woff2') format('woff2-variations');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+html {
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.26;
+  height: 100%;
+}
+
+body {
+  background-color: #0d192c;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  /* flex: 1 0 auto;*/
+}
+
+main {
+  background-color: #15263f;
+  border-radius: .9375rem;
+  box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.0952917);
+  margin: auto auto;
+  max-width: 20.4375rem;
+  max-height: 33.9375rem;
+}
+
+.container {
+  position: relative;
+  width: 17.375rem;
+  margin: 1.5rem;
+}
+
+.equilibrium-picture {
+  border-radius: .5rem;
+  width: 100%;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: 500ms ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.middle {
+  transition: 500ms ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container:hover .equilibrium-picture {
+  opacity: 50.3%;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.container:hover {
+  border-radius: .5rem;
+  background-color: #00fff8;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.375rem;
+  color: #ffffff;
+  margin: 0 1.5rem;
+}
+
+h1:hover {
+  color: #00fff8;
+  cursor: pointer;
+}
+
+
+p {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: calc(26 / 18);
+  color: #8bacd9;
+  margin: .75rem 1.5rem 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 1.5625rem 0 1.5rem;
+}
+
+.info .icon {
+    margin-right: .405rem;
+  }
+
+.info .eth {
+    display: flex;
+  }
+
+.info .eth .currentRate {
+      font-weight: 600;
+      font-size: .9375rem;
+      color: #00fff8;
+    }
+
+.info .end {
+    display: flex;
+  }
+
+.info .end .clock {
+      margin-right: .48125rem;
+    }
+
+.info .end .promoEndDate {
+      font-weight: 400;
+      font-size: .9375rem;
+      color: #8bacd9;
+    }
+
+.divider {
+  border-top: 1px solid #2e405a;
+  width: 18.875rem;
+  margin: 1rem auto 0;
+}
+
+.creator {
+  margin: 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.creator .creator-pic {
+    width: 2.0625rem;
+    margin-right: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  }
+
+.creator p {
+    font-weight: 400;
+    font-size: .9375rem;
+    color: #8bacd9;
+    margin: auto 0;
+  }
+
+.creator p .highlight {
+      color: #ffffff;
+    }
+
+.creator p .highlight:hover {
+      color: #00fff8;
+      cursor: pointer;
+    }
+
+.attribution {
+  font-size: 11px;
+  font-weight: 100;
+  text-align: center;
+  color: #8BACD9;
+  /* grid-row-start: 2;*/
+  /* grid-row-end: 3;*/
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 90rem) {
+
+main {
+    margin: auto auto;
+    max-width: 21.875rem;
+    max-height: 37.25rem
+}
+
+.container {
+    width: 18.875rem
+}
+
+
+p {
+    margin: 1rem 1.5rem 0
+}
+
+.info {
+    margin: 1.5rem 1.5625rem 0 1.5rem
+}
+
+.info .eth .currentRate {
+        font-size: 1rem
+    }
+
+.info .end .promoEndDate {
+        font-size: 1rem
+    }
+
+.divider {
+    margin: 1.5rem auto 0
+}
+
+.creator {
+    margin: 1rem 1.5rem 2rem
+}
+
+.creator p {
+      font-size: 1rem
+  }
+}
+/*# sourceMappingURL=main.css.map */
